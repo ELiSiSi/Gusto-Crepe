@@ -1,211 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Outfit:wght@600;700;800;900&display=swap');
+
 :root {
---main-color: #ffd000;
-  --secondary-color: #000000;
+  --main-color: #E51D52;       /* Gusto Red */
+  --secondary-color: #38B6FF;  /* Gusto Cyan */
+  --bg-color: #6dd3fe;
 }
 
 html {
   scroll-behavior: smooth;
 }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: var(--main-color);
   width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+  background-color: #6dd3fe;
+  background-image: url('../image/background_laptop.png');
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position: center top;
+  color: #111116;
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
 }
+
+@media (max-width: 768px) {
+  body {
+    background-image: url('../image/background_phone.png');
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+  }
+}
+
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  width: 92%;
+  max-width: 580px;
+  margin: auto;
 }
 
-@media (max-width: 400px) {
-  .container {
-    width: 360px;
-  }
-}
-
-/* small  */
-
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-/* medium*/
-
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-/* large */
-
-@media (min-width: 1200px) {
-  .container {
-    width: 900px;
-  }
-}
-
-/* start header */
-/* start header */
-/* start header */
+/* =========================================
+   HEADER
+========================================= */
 .header {
   background-color: #ffffff;
+  width: 100%;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid var(--main-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header .container {
   display: flex;
   justify-content: space-between;
-
   align-items: center;
+  direction: ltr;
 }
 
-.header img {
-  width: 110px;
-  margin: 0px;
-  padding: 0px;
-
-  animation-name: thebest;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
+.header .logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  animation: thebest 2.5s infinite ease-in-out;
 }
 
 @keyframes thebest {
-  0% {
-    translate: 0 0;
-  }
-  50% {
-    translate: 20px 0;
-  }
-
-  100% {
-    translate: 0 0;
-  }
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
 }
 
-.header .container .name {
-  color:  var(--main-color);
+.header .name h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #111116;
+  margin: 0;
 }
 
-.header .container .name span {
-  color: var(--secondary-color);
+.header .btn-back-home {
+  text-decoration: none;
+  background: var(--main-color);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 10px rgba(229, 29, 82, 0.3);
 }
 
-@media (max-width: 768px) {
+.header .btn-back-home:hover {
+  background: #111116;
+  transform: scale(1.05);
+}
+
+@media (max-width: 500px) {
   .header {
-    background-color: #fff;
-    height: 50px;
-    padding-bottom: 20px;
-    padding-top: -200px;
-    margin-top: 0px;
+    height: 56px;
   }
-
-  .header img {
-    width: 40px;
+  .header .logo img {
+    width: 42px;
+    height: 42px;
   }
-
-  .header .container .name {
-    font-size: 14px;
-    color: var(--main-color);
+  .header .name h1 {
+    font-size: 17px;
   }
 }
 
- 
-/* The title */
-/* The title */
-
+/* =========================================
+   TITLE
+========================================= */
 .title {
-  margin-top: 20px;
-  margin-bottom: -25px;
+  margin-top: 22px;
+  margin-bottom: 15px;
   text-align: center;
 }
+
 .title .text {
-  font-size: 50px;
+  font-size: 34px;
+  font-weight: 900;
+  color: #ffffff;
+  background: rgba(229, 29, 82, 0.95);
+  display: inline-block;
+  padding: 4px 26px;
+  border-radius: 50px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-.title .text:hover {
-  color: #ffe100;
-  font-size: 55px;
-}
-
-
-/* The location */
-/* The location */
-/* The location */
+/* =========================================
+   LOCATION (Original fieldset layout)
+========================================= */
 .location {
-  margin-top: 50px;
-}
-.location .container .row {
-  direction: rtl;
-
   margin-top: 20px;
-  
+  margin-bottom: 50px;
 }
 
-.location .container .row p {
-  font-size: 25px;
+.location fieldset {
+  border: 3px solid #ffffff;
+  border-radius: 18px;
+  padding: 22px 20px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  color: #111116;
 }
 
-.location .container .row span {
-  font-size: 30px;
-  color:  #fff;
+.location fieldset:hover {
+  border-color: var(--main-color);
+  box-shadow: 0 10px 30px rgba(229, 29, 82, 0.3);
+  transform: translateY(-2px);
 }
 
-.location .container .row .gps a {
-  font-size: 35px;
-  color: var(--secondary-color);
-  color: yellow;
+.location .row {
+  line-height: 1.8;
 }
 
-.location .container  fieldset:hover{
-
-   border: var(--secondary-color) 5px solid;
- 
+.location .row p {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111116;
 }
 
-/* @media
-   @media
-   @media
-   @media
-   @media
-   @media
-    */
+.location .row .branch-name {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--main-color);
+  display: block;
+  margin-bottom: 8px;
+}
 
-@media (max-width: 768px) {
- 
+.location .row .address-text {
+  font-size: 16px;
+  color: #111116;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.location .row .gps {
+  display: inline-block;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+.location .row .gps a {
+  font-size: 15px;
+  font-weight: 800;
+  background: var(--main-color);
+  color: #ffffff;
+  padding: 8px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(229, 29, 82, 0.35);
+}
+
+.location .row .gps a:hover {
+  background: #111116;
+  transform: scale(1.05);
+}
+
+.location .row .contact-line {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: #111116;
+}
+
+.location .row .contact-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.location .row .contact-links a {
+  background: #ffffff;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.location .row .contact-links a.wa-btn {
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
+.location .row .contact-links a.wa-btn:hover {
+  background: #25D366;
+  border-color: #25D366;
+  color: #fff;
+  transform: scale(1.04);
+}
+
+.location .row .contact-links a.call-btn:hover {
+  background: var(--main-color);
+  border-color: var(--main-color);
+  color: #fff;
+  transform: scale(1.04);
+}
+
+@media (max-width: 500px) {
   .title .text {
-    font-size: 35px;
+    font-size: 28px;
   }
-
- 
-  .location {
-    margin-top: 40px;
+  .location fieldset {
+    padding: 16px 14px;
   }
-  .location .container .row {
-    direction: rtl;
-
-    margin-top: 10px;
- 
-  }
-
-  .location .container .row p {
+  .location .row .branch-name {
     font-size: 18px;
   }
-
-  .location .container .row span {
-    font-size: 25px;
-    color:  #fff;
+  .location .row .address-text {
+    font-size: 15px;
   }
-
-  .location .container .row .gps a {
-    font-size: 35px;
-    color: var(--secondary-color);
+  .location .row .contact-links a {
+    font-size: 14px;
+    padding: 7px 16px;
   }
 }
