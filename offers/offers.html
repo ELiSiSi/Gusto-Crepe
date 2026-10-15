@@ -43,8 +43,14 @@
     <!-- start offer -->
     <div class="offer">
       <div class="container">
-        <img src="image/1 (1).jpg" alt="العرض الأول" />
-        <img src="image/1 (2).jpeg" alt="العرض الثاني" />
+        <picture>
+          <source srcset="image/1 (1).webp" type="image/webp" />
+          <img src="image/1 (1).jpg" alt="العرض الأول" fetchpriority="high" decoding="async" />
+        </picture>
+        <picture>
+          <source srcset="image/1 (2).webp" type="image/webp" />
+          <img src="image/1 (2).jpeg" alt="العرض الثاني" loading="lazy" decoding="async" />
+        </picture>
       </div>
     </div>
 

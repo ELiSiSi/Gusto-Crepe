@@ -147,9 +147,15 @@ body {
   margin-top: 15px;
 }
 
+.offer .container picture {
+  display: block;
+  width: 100%;
+}
+
 .offer .container img {
   width: 100%;
   height: auto;
+  display: block;
   border-radius: 16px;
   border: 2px solid rgba(229, 29, 82, 0.35);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);

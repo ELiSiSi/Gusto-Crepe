@@ -193,10 +193,17 @@ body {
   box-shadow: 0 12px 35px rgba(229, 29, 82, 0.4);
 }
 
+.menu .menu-item picture {
+  display: block;
+  width: 100%;
+}
+
 .menu .menu-item img {
   width: 100%;
   height: auto;
+  aspect-ratio: 7875 / 9843;
   display: block;
+  background: #f4f6f8;
 }
 
 .menu .menu-page-badge {
